@@ -1,3 +1,5 @@
+import { logger } from "../utils";
+
 const map = new Map();
 
 const key_string = "dymmy_string";
@@ -8,7 +10,7 @@ map.set(key_string, "string_value");
 map.set(key_object, "object_value");
 map.set(key_function, "function_value");
 
-// console.log(Array.from(map))
+// logger.log(Array.from(map))
 
-console.log(map.get(key_string));
-console.log(map.has(key_function));
+logger.log(map.get(key_string));
+logger.log(map.has(key_function));

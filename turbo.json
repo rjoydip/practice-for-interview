@@ -1,6 +1,6 @@
 {
-	"$schema": "https://turborepo.com/schema.json",
-	"tasks": {
-		"typecheck": {}
-	}
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "typecheck": {}
+  }
 }

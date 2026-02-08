@@ -5,7 +5,10 @@
 // `setImmediate` is generally favored for executing code after I/O events.
 // Expected output will always start with "tick", followed by "timeout 0" and "imediate"
 // in a non-deterministic order.
+
+import { logger } from "../utils";
+
 // Timing
-setTimeout(() => console.log("timeout 0"), 0);
-process.nextTick(() => console.log("tick"));
-setImmediate(() => console.log("imediate"));
+setTimeout(() => logger.log("timeout 0"), 0);
+process.nextTick(() => logger.log("tick"));
+setImmediate(() => logger.log("imediate"));

@@ -1,7 +1,9 @@
+import { logger } from "../utils";
+
 function* logGenerator(): Generator<void, void, string> {
-	console.log(0);
-	console.log(1, yield);
-	console.log(2, yield);
+  logger.log(0);
+  logger.log(1, yield);
+  logger.log(2, yield);
 }
 
 const gen = logGenerator();

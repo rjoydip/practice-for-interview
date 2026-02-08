@@ -1,10 +1,10 @@
 {
-	"root": false,
-	"extends": "//",
-	"linter": {
-		"enabled": true
-	},
-	"javascript": {
-		"formatter": {}
-	}
+  "root": false,
+  "extends": "//",
+  "linter": {
+    "enabled": true
+  },
+  "javascript": {
+    "formatter": {}
+  }
 }
