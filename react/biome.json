@@ -1,0 +1,12 @@
+{
+	"root": false,
+	"extends": "//",
+	"linter": {
+		"enabled": false
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	}
+}
