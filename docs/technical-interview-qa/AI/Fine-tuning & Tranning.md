@@ -6,21 +6,21 @@
 
 ### ✅ Use prompt engineering when:
 
-* Task is **general-purpose**
-* You can solve with:
+- Task is **general-purpose**
+- You can solve with:
+  - few-shot examples
+  - better instructions
 
-  * few-shot examples
-  * better instructions
-* Data is limited
+- Data is limited
 
 ### ✅ Use fine-tuning when:
 
-* You need:
+- You need:
+  - Consistent tone/style
+  - Domain specialization
+  - Structured outputs at scale
 
-  * Consistent tone/style
-  * Domain specialization
-  * Structured outputs at scale
-* Prompts become too long/complex
+- Prompts become too long/complex
 
 ---
 
@@ -40,8 +40,8 @@
 
 ### Rule:
 
-* **Knowledge changes frequently → RAG**
-* **Behavior/style → Fine-tuning**
+- **Knowledge changes frequently → RAG**
+- **Behavior/style → Fine-tuning**
 
 ---
 
@@ -59,15 +59,15 @@ W → W + (A × B)
 
 Where:
 
-* A, B are small matrices
+- A, B are small matrices
 
 ---
 
 ### Benefits:
 
-* 10–100x fewer parameters
-* Faster training
-* Lower memory usage
+- 10–100x fewer parameters
+- Faster training
+- Lower memory usage
 
 ---
 
@@ -77,21 +77,21 @@ QLoRA = LoRA + quantization
 
 ### Key idea:
 
-* Store base model in **4-bit precision**
-* Train adapters in higher precision
+- Store base model in **4-bit precision**
+- Train adapters in higher precision
 
 ---
 
 ### Benefits:
 
-* Train large models on **single GPU**
-* Huge cost savings
+- Train large models on **single GPU**
+- Huge cost savings
 
 ---
 
 ### Tradeoff:
 
-* Slight accuracy drop
+- Slight accuracy drop
 
 ---
 
@@ -110,8 +110,8 @@ QLoRA = LoRA + quantization
 
 ### Why needed:
 
-* Align model with human expectations
-* Reduce harmful outputs
+- Align model with human expectations
+- Reduce harmful outputs
 
 ---
 
@@ -119,8 +119,8 @@ QLoRA = LoRA + quantization
 
 ### Simplified RLHF:
 
-* No reward model
-* No PPO
+- No reward model
+- No PPO
 
 ### Directly optimize:
 
@@ -142,8 +142,8 @@ Preferred response > Rejected response
 
 ### When to use:
 
-* RLHF → large-scale alignment
-* DPO → faster iteration
+- RLHF → large-scale alignment
+- DPO → faster iteration
 
 ---
 
@@ -165,8 +165,8 @@ Instruction → Response
 
 ### Difference from pre-training:
 
-* Pre-training = next token prediction
-* Instruction tuning = task-following
+- Pre-training = next token prediction
+- Instruction tuning = task-following
 
 ---
 
@@ -178,15 +178,15 @@ LLM decoding is slow
 
 ### Solution:
 
-* Small model predicts tokens
-* Large model verifies
+- Small model predicts tokens
+- Large model verifies
 
 ---
 
 ### Benefit:
 
-* Faster inference
-* Same quality
+- Faster inference
+- Same quality
 
 ---
 
@@ -194,17 +194,17 @@ LLM decoding is slow
 
 ### Signals:
 
-* Accept response → positive
-* Edit response → partial negative
-* Reject → negative
+- Accept response → positive
+- Edit response → partial negative
+- Reject → negative
 
 ---
 
 ### Use:
 
-* Improve prompts
-* Fine-tune model
-* Train reward models
+- Improve prompts
+- Fine-tune model
+- Train reward models
 
 ---
 
@@ -220,16 +220,16 @@ FP32 → FP16 → INT8 → INT4
 
 ### Benefits:
 
-* Smaller model
-* Faster inference
-* Lower memory
+- Smaller model
+- Faster inference
+- Lower memory
 
 ---
 
 ### Tradeoffs:
 
-* Accuracy loss
-* Numerical instability
+- Accuracy loss
+- Numerical instability
 
 ---
 
@@ -247,9 +247,9 @@ Teacher (large) → Student (small)
 
 ### Benefits:
 
-* Faster
-* Cheaper
-* Deployable on edge
+- Faster
+- Cheaper
+- Deployable on edge
 
 ---
 
@@ -280,23 +280,19 @@ Deployment
 ### Steps:
 
 1. Data:
-
-   * Math datasets
-   * Step-by-step solutions
+   - Math datasets
+   - Step-by-step solutions
 
 2. Training:
-
-   * Supervised fine-tuning
-   * Chain-of-thought examples
+   - Supervised fine-tuning
+   - Chain-of-thought examples
 
 3. Post-training:
-
-   * RLHF (correct reasoning)
+   - RLHF (correct reasoning)
 
 4. Evaluation:
-
-   * Accuracy
-   * Reasoning quality
+   - Accuracy
+   - Reasoning quality
 
 ---
 
@@ -304,18 +300,18 @@ Deployment
 
 ### Key components:
 
-* Distributed training (data/model parallelism)
-* GPU clusters
-* Checkpointing
-* Data pipelines
+- Distributed training (data/model parallelism)
+- GPU clusters
+- Checkpointing
+- Data pipelines
 
 ---
 
 ### Challenges:
 
-* GPU memory limits
-* Communication overhead
-* Fault tolerance
+- GPU memory limits
+- Communication overhead
+- Fault tolerance
 
 ---
 
@@ -323,9 +319,9 @@ Deployment
 
 🚫 Avoid when:
 
-* Knowledge changes frequently
-* Small dataset
-* Problem solvable with RAG
+- Knowledge changes frequently
+- Small dataset
+- Problem solvable with RAG
 
 ---
 
@@ -361,17 +357,17 @@ Deployment
 
 ### Key:
 
-* Deduplication
-* Filtering toxic data
-* Balanced dataset
+- Deduplication
+- Filtering toxic data
+- Balanced dataset
 
 ---
 
 ## 20. Evaluation during training
 
-* Loss curves
-* Validation datasets
-* Human evals
+- Loss curves
+- Validation datasets
+- Human evals
 
 ---
 
@@ -383,9 +379,9 @@ Deployment
 
 They:
 
-* Use APIs
-* Fine-tune small models
-* Build RAG systems
+- Use APIs
+- Fine-tune small models
+- Build RAG systems
 
 2. Biggest mistake:
 

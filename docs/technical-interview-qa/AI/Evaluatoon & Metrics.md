@@ -8,21 +8,21 @@
 
 #### 1. Model-level (offline)
 
-* Perplexity
-* BLEU / ROUGE
-* Accuracy
+- Perplexity
+- BLEU / ROUGE
+- Accuracy
 
 #### 2. Task-level
 
-* Exact match
-* F1 score
-* Retrieval metrics (RAG)
+- Exact match
+- F1 score
+- Retrieval metrics (RAG)
 
 #### 3. Product-level
 
-* User satisfaction
-* Task success rate
-* Latency
+- User satisfaction
+- Task success rate
+- Latency
 
 ---
 
@@ -38,32 +38,32 @@
 
 #### ✅ Correctness
 
-* Is the answer factually correct?
+- Is the answer factually correct?
 
 #### ✅ Relevance
 
-* Does it answer the question?
+- Does it answer the question?
 
 #### ✅ Groundedness
 
-* Is it based on retrieved data?
+- Is it based on retrieved data?
 
 #### ✅ Safety
 
-* No harmful output
+- No harmful output
 
 #### ✅ UX
 
-* Response time
-* Clarity
+- Response time
+- Clarity
 
 ---
 
 ### Methods:
 
-* Human evaluation
-* LLM-as-judge
-* Golden datasets
+- Human evaluation
+- LLM-as-judge
+- Golden datasets
 
 ---
 
@@ -73,19 +73,19 @@
 
 #### 1. Retrieval comparison
 
-* Check if answer exists in context
+- Check if answer exists in context
 
 #### 2. Self-consistency
 
-* Generate multiple answers → compare
+- Generate multiple answers → compare
 
 #### 3. Confidence scoring
 
-* Probability-based or heuristic
+- Probability-based or heuristic
 
 #### 4. LLM judge
 
-* Ask another model:
+- Ask another model:
 
   > “Is this answer supported by context?”
 
@@ -95,15 +95,16 @@
 
 ### Key strategies:
 
-* Use RAG
-* Add constraints:
+- Use RAG
+- Add constraints:
 
   ```
   "Answer only from provided context"
   ```
-* Return “I don’t know” fallback
-* Add citations
-* Validate outputs
+
+- Return “I don’t know” fallback
+- Add citations
+- Validate outputs
 
 ---
 
@@ -111,9 +112,9 @@
 
 ### Techniques:
 
-* Extractive + abstractive hybrid
-* Faithfulness checks
-* Compare summary with source
+- Extractive + abstractive hybrid
+- Faithfulness checks
+- Compare summary with source
 
 ---
 
@@ -131,9 +132,9 @@
 
 ### Root causes:
 
-* Bad retrieval
-* Missing context
-* Prompt ambiguity
+- Bad retrieval
+- Missing context
+- Prompt ambiguity
 
 ---
 
@@ -141,11 +142,11 @@
 
 ### SHAP:
 
-* Measures feature contribution using game theory
+- Measures feature contribution using game theory
 
 ### LIME:
 
-* Local approximation of model behavior
+- Local approximation of model behavior
 
 ---
 
@@ -153,8 +154,8 @@
 
 Used less directly, but concepts apply in:
 
-* Feature attribution
-* Explanation layers
+- Feature attribution
+- Explanation layers
 
 ---
 
@@ -170,22 +171,22 @@ Lower = better
 
 ### 🔹 BLEU
 
-* Measures overlap with reference
-* Used in translation
+- Measures overlap with reference
+- Used in translation
 
 ---
 
 ### 🔹 ROUGE
 
-* Measures recall overlap
-* Used in summarization
+- Measures recall overlap
+- Used in summarization
 
 ---
 
 ### ⚠️ Pitfalls:
 
-* Ignore semantics
-* Penalize valid variations
+- Ignore semantics
+- Penalize valid variations
 
 ---
 
@@ -199,9 +200,9 @@ Same input ≠ same output
 
 ### Solutions:
 
-* Run multiple times
-* Evaluate distribution
-* Use tolerance thresholds
+- Run multiple times
+- Evaluate distribution
+- Use tolerance thresholds
 
 ---
 
@@ -209,9 +210,9 @@ Same input ≠ same output
 
 ### Instead of exact match:
 
-* Semantic similarity
-* Human evaluation
-* Task success
+- Semantic similarity
+- Human evaluation
+- Task success
 
 ---
 
@@ -219,10 +220,10 @@ Same input ≠ same output
 
 ### Examples:
 
-* Deflection rate (support bots)
-* Conversion rate
-* Retention
-* Cost per query
+- Deflection rate (support bots)
+- Conversion rate
+- Retention
+- Cost per query
 
 ---
 
@@ -230,11 +231,11 @@ Same input ≠ same output
 
 ### Track:
 
-* Latency (p50, p95)
-* Error rate
-* Token usage
-* Hallucination rate
-* Drift
+- Latency (p50, p95)
+- Error rate
+- Token usage
+- Hallucination rate
+- Drift
 
 ---
 
@@ -242,16 +243,16 @@ Same input ≠ same output
 
 ### Risks:
 
-* Biased training data
-* Harmful outputs
+- Biased training data
+- Harmful outputs
 
 ---
 
 ### Mitigation:
 
-* Balanced datasets
-* Bias evaluation sets
-* Human review
+- Balanced datasets
+- Bias evaluation sets
+- Human review
 
 ---
 
@@ -265,8 +266,8 @@ Time until first token is generated
 
 ### Why important:
 
-* Perceived latency
-* UX responsiveness
+- Perceived latency
+- UX responsiveness
 
 ---
 
@@ -282,8 +283,8 @@ Time until first token is generated
 
 ### Proxy methods:
 
-* LLM-as-judge
-* Retrieval overlap score
+- LLM-as-judge
+- Retrieval overlap score
 
 ---
 
@@ -291,14 +292,14 @@ Time until first token is generated
 
 ### Vibe-based:
 
-* Manual testing
-* Subjective
+- Manual testing
+- Subjective
 
 ### Formal:
 
-* Metrics
-* Benchmarks
-* Automated pipelines
+- Metrics
+- Benchmarks
+- Automated pipelines
 
 ---
 
@@ -319,8 +320,8 @@ High-quality labeled dataset
 
 ### Use:
 
-* Regression testing
-* Benchmarking
+- Regression testing
+- Benchmarking
 
 ---
 
@@ -337,9 +338,9 @@ A: 30 days with receipt
 
 ### Sources:
 
-* User feedback
-* Logs
-* Corrections
+- User feedback
+- Logs
+- Corrections
 
 ---
 
@@ -367,12 +368,11 @@ User feedback → Data pipeline → Retraining → Evaluation → Deployment
 
 ### Method:
 
-* Split traffic
-* Compare:
-
-  * accuracy
-  * engagement
-  * latency
+- Split traffic
+- Compare:
+  - accuracy
+  - engagement
+  - latency
 
 ---
 
@@ -380,15 +380,15 @@ User feedback → Data pipeline → Retraining → Evaluation → Deployment
 
 ### 🔹 Canary deployment
 
-* Small % rollout
+- Small % rollout
 
 ### 🔹 Shadow testing
 
-* Run new model in parallel
+- Run new model in parallel
 
 ### 🔹 Interleaving
 
-* Compare outputs dynamically
+- Compare outputs dynamically
 
 ---
 
@@ -402,8 +402,8 @@ Model is overconfident
 
 ### Solution:
 
-* Calibrate probabilities
-* Add uncertainty estimates
+- Calibrate probabilities
+- Add uncertainty estimates
 
 ---
 
@@ -423,8 +423,8 @@ Model is overconfident
 
 ### Prevent breaking changes:
 
-* Run against golden dataset
-* Compare outputs
+- Run against golden dataset
+- Compare outputs
 
 ---
 

@@ -44,15 +44,15 @@ Transformers replaced RNNs/CNNs by using **attention instead of recurrence**.
 ### Pipeline:
 
 ```
-Input → Tokenization → Embedding → Positional Encoding → 
+Input → Tokenization → Embedding → Positional Encoding →
 Multi-head Attention → Feed Forward → Output
 ```
 
 ### Why they work:
 
-* Capture **long-range dependencies**
-* Fully parallelizable
-* Scales efficiently
+- Capture **long-range dependencies**
+- Fully parallelizable
+- Scales efficiently
 
 ---
 
@@ -69,9 +69,9 @@ Example:
 
 ### Impact:
 
-* Affects **cost (tokens billed)**
-* Affects **performance (rare tokens = worse understanding)**
-* Affects **context window usage**
+- Affects **cost (tokens billed)**
+- Affects **performance (rare tokens = worse understanding)**
+- Affects **context window usage**
 
 ---
 
@@ -85,8 +85,8 @@ Example:
 
 ### Example:
 
-* Pre-training → general knowledge
-* Fine-tuning → medical chatbot
+- Pre-training → general knowledge
+- Fine-tuning → medical chatbot
 
 ---
 
@@ -96,14 +96,14 @@ The **max tokens model can process at once**
 
 ### Limitation:
 
-* Older tokens get truncated
-* Cannot "remember" beyond window
+- Older tokens get truncated
+- Cannot "remember" beyond window
 
 ### Workarounds:
 
-* Chunking
-* RAG
-* Summarization
+- Chunking
+- RAG
+- Summarization
 
 ---
 
@@ -117,8 +117,8 @@ Performance ∝ (model size, data size, compute)
 
 ### Why it matters:
 
-* Bigger models → better generalization
-* Predict performance improvements before training
+- Bigger models → better generalization
+- Predict performance improvements before training
 
 ---
 
@@ -128,9 +128,9 @@ Performance ∝ (model size, data size, compute)
 
 Controls randomness
 
-* 0 → deterministic
-* 1 → balanced
-* > 1 → creative
+- 0 → deterministic
+- 1 → balanced
+- > 1 → creative
 
 ### Top-p (nucleus sampling):
 
@@ -166,8 +166,8 @@ Stores attention keys/values from previous tokens.
 
 ### Benefit:
 
-* Avoid recomputing attention
-* Speeds up inference significantly
+- Avoid recomputing attention
+- Speeds up inference significantly
 
 ---
 
@@ -181,8 +181,8 @@ Stores attention keys/values from previous tokens.
 
 ### Example:
 
-* Traditional: regex parser
-* GenAI: extract entities from messy text
+- Traditional: regex parser
+- GenAI: extract entities from messy text
 
 ---
 
@@ -190,11 +190,11 @@ Stores attention keys/values from previous tokens.
 
 ### Techniques:
 
-* RAG
-* Validation layers
-* Structured outputs (JSON schema)
-* Multi-step pipelines
-* Guardrails
+- RAG
+- Validation layers
+- Structured outputs (JSON schema)
+- Multi-step pipelines
+- Guardrails
 
 ---
 
@@ -220,9 +220,9 @@ Vector representation of text:
 
 ### Use:
 
-* Semantic search
-* Clustering
-* Similarity
+- Semantic search
+- Clustering
+- Similarity
 
 ---
 
@@ -232,9 +232,9 @@ Split large documents into smaller pieces.
 
 ### Strategies:
 
-* Fixed size
-* Semantic chunking
-* Sliding window
+- Fixed size
+- Semantic chunking
+- Sliding window
 
 ---
 
@@ -253,8 +253,8 @@ Uses **knowledge graphs** instead of flat chunks.
 
 ### Benefit:
 
-* Better reasoning
-* Handles relationships
+- Better reasoning
+- Handles relationships
 
 ---
 
@@ -280,8 +280,8 @@ KL(P || Q)
 
 Used in:
 
-* Model training
-* RLHF
+- Model training
+- RLHF
 
 ---
 
@@ -296,16 +296,16 @@ Used in:
 
 ## 20. Text Summarization Types
 
-* Extractive → pick sentences
-* Abstractive → generate summary
+- Extractive → pick sentences
+- Abstractive → generate summary
 
 ---
 
 ## 21. Memory Management in LLMs
 
-* Short-term: context window
-* Long-term: vector DB
-* External memory: DB/cache
+- Short-term: context window
+- Long-term: vector DB
+- External memory: DB/cache
 
 ---
 
@@ -349,9 +349,9 @@ Reduces compute by sharing keys/values across heads.
 
 ## 26. Why Decoder-only dominates?
 
-* Simpler
-* Scales better
-* Works for most tasks via prompting
+- Simpler
+- Scales better
+- Works for most tasks via prompting
 
 ---
 
@@ -390,8 +390,8 @@ Only some model parts activated per input.
 
 ### Benefit:
 
-* Huge model capacity
-* Lower compute per request
+- Huge model capacity
+- Lower compute per request
 
 ---
 
@@ -407,10 +407,10 @@ y₁ → y₂ → y₃ ...
 
 ## 32. Decoding Strategies
 
-* Greedy
-* Beam search
-* Top-k
-* Top-p
+- Greedy
+- Beam search
+- Top-k
+- Top-p
 
 ---
 
@@ -418,15 +418,15 @@ y₁ → y₂ → y₃ ...
 
 Optimized attention:
 
-* Reduces memory usage
-* Faster GPU performance
+- Reduces memory usage
+- Faster GPU performance
 
 ---
 
 ## 34. Why inference is memory-bounded
 
-* KV cache grows with sequence
-* GPU memory limits throughput
+- KV cache grows with sequence
+- GPU memory limits throughput
 
 ---
 
@@ -442,16 +442,15 @@ Define when to stop generation:
 
 ## 36. Long Context Handling
 
-* Chunking
-* RAG
-* Sliding window
+- Chunking
+- RAG
+- Sliding window
 
 ---
 
 ## 37. Tokenizer Risks in Domain Data
 
-* Medical/legal terms split incorrectly
-* Leads to:
-
-  * Poor embeddings
-  * Hallucinations
+- Medical/legal terms split incorrectly
+- Leads to:
+  - Poor embeddings
+  - Hallucinations

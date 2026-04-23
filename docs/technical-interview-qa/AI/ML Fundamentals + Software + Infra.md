@@ -10,10 +10,10 @@
 
 ### Steps:
 
-* Handle missing values
-* Normalize/standardize
-* Encode categorical variables
-* Feature selection
+- Handle missing values
+- Normalize/standardize
+- Encode categorical variables
+- Feature selection
 
 ### Insight:
 
@@ -30,8 +30,8 @@
 
 ### Use:
 
-* SQL → analytics, joins
-* NoSQL → logs, embeddings, events
+- SQL → analytics, joins
+- NoSQL → logs, embeddings, events
 
 ---
 
@@ -39,11 +39,11 @@
 
 ### Checklist:
 
-* Data quality
-* Feature issues
-* Overfitting/underfitting
-* Hyperparameters
-* Training bugs
+- Data quality
+- Feature issues
+- Overfitting/underfitting
+- Hyperparameters
+- Training bugs
 
 ---
 
@@ -53,8 +53,8 @@
 
 👉 Optimize **latency**, not throughput
 
-* User cares about response time
-* Not batch processing
+- User cares about response time
+- Not batch processing
 
 ---
 
@@ -64,15 +64,15 @@
 
 👉 It’s useful for:
 
-* Training
-* Batch inference
+- Training
+- Batch inference
 
 ---
 
 ## 6. Bias-Variance Tradeoff
 
-* High bias → underfitting
-* High variance → overfitting
+- High bias → underfitting
+- High variance → overfitting
 
 👉 Goal:
 Balance both
@@ -81,8 +81,8 @@ Balance both
 
 ## 7. Why neural networks struggle with tabular data
 
-* Tabular = structured relationships
-* Tree-based models (XGBoost) often better
+- Tabular = structured relationships
+- Tree-based models (XGBoost) often better
 
 ---
 
@@ -90,10 +90,10 @@ Balance both
 
 ### Techniques:
 
-* Oversampling
-* Undersampling
-* Class weights
-* Synthetic data (SMOTE)
+- Oversampling
+- Undersampling
+- Class weights
+- Synthetic data (SMOTE)
 
 ---
 
@@ -118,12 +118,12 @@ Balance both
 
 ## 11. Feature scaling
 
-* **Normalization** → [0,1]
-* **Standardization** → mean=0, std=1
+- **Normalization** → [0,1]
+- **Standardization** → mean=0, std=1
 
 👉 Needed for:
 
-* Gradient-based models
+- Gradient-based models
 
 ---
 
@@ -135,8 +135,8 @@ Formula:
 
 Used in:
 
-* Semantic search
-* Vector DBs
+- Semantic search
+- Vector DBs
 
 ---
 
@@ -152,19 +152,19 @@ Multiple threads modify shared state
 
 ### Fix:
 
-* Locks
-* Atomic operations
-* Message queues
+- Locks
+- Atomic operations
+- Message queues
 
 ---
 
 ## 14. Python GIL
 
-* Only one thread executes Python bytecode at a time
+- Only one thread executes Python bytecode at a time
 
 👉 Implication:
 
-* Threads ≠ true parallelism (CPU-bound)
+- Threads ≠ true parallelism (CPU-bound)
 
 ---
 
@@ -180,9 +180,9 @@ Multiple threads modify shared state
 
 ## 16. Problems with async
 
-* Deadlocks
-* Hard debugging
-* Callback hell
+- Deadlocks
+- Hard debugging
+- Callback hell
 
 ---
 
@@ -190,8 +190,8 @@ Multiple threads modify shared state
 
 ### Why:
 
-* Consistent environments
-* Easy deployment
+- Consistent environments
+- Easy deployment
 
 ---
 
@@ -199,9 +199,9 @@ Multiple threads modify shared state
 
 Used for:
 
-* Caching
-* Rate limiting
-* Session storage
+- Caching
+- Rate limiting
+- Session storage
 
 ---
 
@@ -209,8 +209,8 @@ Used for:
 
 ### Core idea:
 
-* Single-threaded
-* Handles async via queue
+- Single-threaded
+- Handles async via queue
 
 ---
 
@@ -218,10 +218,10 @@ Used for:
 
 ### Must handle:
 
-* Retries (exponential backoff)
-* Timeouts
-* Logging
-* Rate limits
+- Retries (exponential backoff)
+- Timeouts
+- Logging
+- Rate limits
 
 ---
 
@@ -229,9 +229,9 @@ Used for:
 
 ### Tools:
 
-* Logs
-* Metrics
-* Tracing (OpenTelemetry)
+- Logs
+- Metrics
+- Tracing (OpenTelemetry)
 
 👉 You already use this → strong advantage
 
@@ -241,8 +241,8 @@ Used for:
 
 ### Causes:
 
-* Circular references
-* Unreleased resources
+- Circular references
+- Unreleased resources
 
 ---
 
@@ -264,8 +264,8 @@ Model → API → Load balancer → Monitoring → Logging
 
 ### Types:
 
-* Data parallelism
-* Model parallelism
+- Data parallelism
+- Model parallelism
 
 ---
 
@@ -281,10 +281,10 @@ Ingestion → Processing → Storage → Training → Serving
 
 ### Strategies:
 
-* Rate limiting
-* Queueing
-* Caching
-* Autoscaling
+- Rate limiting
+- Queueing
+- Caching
+- Autoscaling
 
 ---
 
@@ -292,10 +292,10 @@ Ingestion → Processing → Storage → Training → Serving
 
 Track:
 
-* Latency
-* Error rate
-* Token usage
-* Drift
+- Latency
+- Error rate
+- Token usage
+- Drift
 
 ---
 
@@ -303,10 +303,10 @@ Track:
 
 ### Biggest issues:
 
-* Cost
-* Latency
-* Rate limits
-* Context size
+- Cost
+- Latency
+- Rate limits
+- Context size
 
 ---
 
@@ -318,19 +318,19 @@ Track:
 
 ### Techniques:
 
-* Cache responses
-* Use smaller models
-* Reduce tokens
-* Batch requests
+- Cache responses
+- Use smaller models
+- Reduce tokens
+- Batch requests
 
 ---
 
 ## 30. Reducing token cost
 
-* Short prompts
-* Summarization
-* Reuse context
-* Compress history
+- Short prompts
+- Summarization
+- Reuse context
+- Compress history
 
 ---
 
@@ -345,9 +345,9 @@ Complex query → large model
 
 ## 32. Multi-layer caching
 
-* Retrieval cache
-* Prompt cache
-* Response cache
+- Retrieval cache
+- Prompt cache
+- Response cache
 
 ---
 
@@ -355,9 +355,9 @@ Complex query → large model
 
 ### Triangle:
 
-* Low latency → small model
-* High quality → big model
-* Low cost → optimize tokens
+- Low latency → small model
+- High quality → big model
+- Low cost → optimize tokens
 
 👉 You balance all three
 
@@ -365,10 +365,10 @@ Complex query → large model
 
 ## 34. Reducing latency
 
-* Streaming responses
-* Parallel calls
-* Smaller models
-* KV cache
+- Streaming responses
+- Parallel calls
+- Smaller models
+- KV cache
 
 ---
 
@@ -380,8 +380,8 @@ Complex query → large model
 
 ## 36. Prompt compression
 
-* Summarize context
-* Remove redundancy
+- Summarize context
+- Remove redundancy
 
 ---
 
@@ -389,9 +389,9 @@ Complex query → large model
 
 Track:
 
-* Time per step
-* Bottlenecks
-* Token usage
+- Time per step
+- Bottlenecks
+- Token usage
 
 ---
 
@@ -430,10 +430,10 @@ Caching + Monitoring
 
 👉 Can you:
 
-* Build reliable systems?
-* Debug failures?
-* Optimize cost?
-* Scale to production?
+- Build reliable systems?
+- Debug failures?
+- Optimize cost?
+- Scale to production?
 
 ---
 
@@ -441,8 +441,8 @@ Caching + Monitoring
 
 You already have:
 
-* Backend expertise
-* Distributed systems knowledge
-* Observability (OpenTelemetry)
+- Backend expertise
+- Distributed systems knowledge
+- Observability (OpenTelemetry)
 
 👉 You’re closer to **AI Engineer (senior)** than most candidates

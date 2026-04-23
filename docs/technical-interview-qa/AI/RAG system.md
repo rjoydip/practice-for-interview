@@ -6,8 +6,8 @@
 
 **Retrieval-Augmented Generation (RAG)** combines:
 
-* **Retrieval system (search)**
-* **LLM (generation)**
+- **Retrieval system (search)**
+- **LLM (generation)**
 
 ### End-to-end pipeline:
 
@@ -78,9 +78,9 @@ Response + Citations
 
 ### 🔹 Evaluation
 
-* Retrieval: Recall@k, MRR, NDCG
-* Generation: factual accuracy, groundedness
-* UX: latency, satisfaction, deflection rate
+- Retrieval: Recall@k, MRR, NDCG
+- Generation: factual accuracy, groundedness
+- UX: latency, satisfaction, deflection rate
 
 ---
 
@@ -88,16 +88,16 @@ Response + Citations
 
 ### Requirements:
 
-* Multi-source (Slack, Docs, DBs)
-* Low latency (<500ms)
-* Access control
+- Multi-source (Slack, Docs, DBs)
+- Low latency (<500ms)
+- Access control
 
 ### Key additions:
 
-* **Metadata filtering (ACLs)**
-* Hybrid search
-* Index sharding
-* Query routing
+- **Metadata filtering (ACLs)**
+- Hybrid search
+- Index sharding
+- Query routing
 
 ---
 
@@ -109,11 +109,10 @@ LLMs can’t handle entire documents.
 
 ### Solutions:
 
-* Chunking (semantic > fixed)
-* Overlapping windows
-* Hierarchical retrieval:
-
-  * Section → paragraph → sentence
+- Chunking (semantic > fixed)
+- Overlapping windows
+- Hierarchical retrieval:
+  - Section → paragraph → sentence
 
 ---
 
@@ -121,14 +120,14 @@ LLMs can’t handle entire documents.
 
 ### Options:
 
-* Precompute embeddings (recommended)
-* Store in vector DB (FAISS, Pinecone, Weaviate)
+- Precompute embeddings (recommended)
+- Store in vector DB (FAISS, Pinecone, Weaviate)
 
 ### Optimization:
 
-* Batch embedding generation
-* Deduplicate content
-* Cache frequent queries
+- Batch embedding generation
+- Deduplicate content
+- Cache frequent queries
 
 ---
 
@@ -138,14 +137,15 @@ LLMs can’t handle entire documents.
 
 ### Solutions:
 
-* Confidence threshold
-* Fallback:
+- Confidence threshold
+- Fallback:
 
   ```
   "I couldn't find relevant information"
   ```
-* Retrieval validation
-* Add “answer only from context” constraint
+
+- Retrieval validation
+- Add “answer only from context” constraint
 
 ---
 
@@ -158,8 +158,8 @@ LLMs can’t handle entire documents.
 
 ### Use:
 
-* Sparse → legal, exact match
-* Dense → natural language
+- Sparse → legal, exact match
+- Dense → natural language
 
 👉 Best practice: **Hybrid search**
 
@@ -175,7 +175,7 @@ Score = α * BM25 + β * Embedding similarity
 
 ### Why:
 
-* Fix embedding failures (numbers, keywords)
+- Fix embedding failures (numbers, keywords)
 
 ---
 
@@ -187,8 +187,8 @@ Vector search ≠ perfect ranking
 
 ### Types:
 
-* **Bi-encoder** → fast, less accurate
-* **Cross-encoder** → slow, very accurate
+- **Bi-encoder** → fast, less accurate
+- **Cross-encoder** → slow, very accurate
 
 ### Flow:
 
@@ -202,19 +202,19 @@ Top 50 docs → Cross-encoder → Top 5
 
 ### 🔴 Retrieval issues:
 
-* Wrong chunks
-* Missing context
-* Poor embeddings
+- Wrong chunks
+- Missing context
+- Poor embeddings
 
 ### 🔴 Generation issues:
 
-* Hallucination
-* Ignoring context
+- Hallucination
+- Ignoring context
 
 ### 🔴 Data issues:
 
-* Outdated docs
-* Noise
+- Outdated docs
+- Noise
 
 ---
 
@@ -231,10 +231,10 @@ Top 50 docs → Cross-encoder → Top 5
 
 ### Techniques:
 
-* PII masking
-* Access control filters
-* Encryption
-* On-prem vector DB
+- PII masking
+- Access control filters
+- Encryption
+- On-prem vector DB
 
 ---
 
@@ -242,14 +242,14 @@ Top 50 docs → Cross-encoder → Top 5
 
 Common:
 
-* FAISS → local
-* Pinecone → managed
-* Weaviate → hybrid
-* Milvus → scalable
+- FAISS → local
+- Pinecone → managed
+- Weaviate → hybrid
+- Milvus → scalable
 
 ### Tradeoffs:
 
-* Latency vs control vs cost
+- Latency vs control vs cost
 
 ---
 
@@ -261,9 +261,9 @@ Example:
 
 ### Solution:
 
-* Add metadata to chunks
-* Inject global context in prompt
-* Use hierarchical chunking
+- Add metadata to chunks
+- Inject global context in prompt
+- Use hierarchical chunking
 
 ---
 
@@ -279,9 +279,9 @@ Approximate search
 
 ### HNSW:
 
-* Graph-based index
-* Fast lookup
-* Trade accuracy for speed
+- Graph-based index
+- Fast lookup
+- Trade accuracy for speed
 
 ---
 
@@ -289,14 +289,14 @@ Approximate search
 
 ### Key cases:
 
-* Negation (“not good”)
-* Numbers (“$5M vs $5B”)
-* Time (“2020 vs 2024”)
+- Negation (“not good”)
+- Numbers (“$5M vs $5B”)
+- Time (“2020 vs 2024”)
 
 ### Fix:
 
-* Hybrid search
-* Rule-based filters
+- Hybrid search
+- Rule-based filters
 
 ---
 
@@ -313,8 +313,8 @@ Cache based on meaning:
 
 ### Benefit:
 
-* Reduce cost
-* Reduce latency
+- Reduce cost
+- Reduce latency
 
 ---
 
@@ -326,9 +326,9 @@ Context lost across turns
 
 ### Solutions:
 
-* Maintain chat history
-* Summarize past turns
-* Store conversation embeddings
+- Maintain chat history
+- Summarize past turns
+- Store conversation embeddings
 
 ---
 
@@ -346,10 +346,10 @@ Context lost across turns
 
 ### Techniques:
 
-* Sharding vector DB
-* Distributed indexing
-* Caching hot queries
-* Async retrieval
+- Sharding vector DB
+- Distributed indexing
+- Caching hot queries
+- Async retrieval
 
 ---
 
@@ -361,9 +361,9 @@ Search returns docs, not answers
 
 ### Solution:
 
-* Summarization layer
-* Answer synthesis
-* Highlight key spans
+- Summarization layer
+- Answer synthesis
+- Highlight key spans
 
 ---
 
@@ -371,16 +371,16 @@ Search returns docs, not answers
 
 ### Retrieval:
 
-* Precision@k
-* Recall@k
-* MRR
-* NDCG
+- Precision@k
+- Recall@k
+- MRR
+- NDCG
 
 ### Generation:
 
-* Faithfulness
-* Answer correctness
-* Groundedness
+- Faithfulness
+- Answer correctness
+- Groundedness
 
 ---
 
@@ -388,13 +388,14 @@ Search returns docs, not answers
 
 ### Techniques:
 
-* Return source chunks
-* Inline citations:
+- Return source chunks
+- Inline citations:
 
   ```
   "According to policy doc [1]"
   ```
-* Highlight spans
+
+- Highlight spans
 
 ---
 
@@ -410,10 +411,10 @@ Always ask:
 
 ### Biggest wins:
 
-* Reduce top-k
-* Cache embeddings
-* Use smaller models for retrieval
-* Parallelize retrieval + generation
+- Reduce top-k
+- Cache embeddings
+- Use smaller models for retrieval
+- Parallelize retrieval + generation
 
 ---
 
@@ -455,13 +456,13 @@ Bad docs → bad system
 
 ### 3. Observability is critical:
 
-* Log queries
-* Track failures
-* Store embeddings
+- Log queries
+- Track failures
+- Store embeddings
 
 ---
 
 ### 4. Always design fallback:
 
-* No answer
-* Escalate to human
+- No answer
+- Escalate to human

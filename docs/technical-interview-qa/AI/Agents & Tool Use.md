@@ -6,11 +6,11 @@
 
 An **AI agent** is a system that:
 
-* **Perceives input**
-* **Plans actions**
-* **Uses tools**
-* **Maintains state**
-* **Iterates until a goal is achieved**
+- **Perceives input**
+- **Plans actions**
+- **Uses tools**
+- **Maintains state**
+- **Iterates until a goal is achieved**
 
 ### Core loop:
 
@@ -30,8 +30,8 @@ Observe → Think → Act → Observe → ... → Done
 
 ### Example:
 
-* Chain → “Summarize document”
-* Agent → “Search → analyze → write → validate”
+- Chain → “Summarize document”
+- Agent → “Search → analyze → write → validate”
 
 ---
 
@@ -39,15 +39,15 @@ Observe → Think → Act → Observe → ... → Done
 
 ### MUST have:
 
-* **Autonomy** (decides next step)
-* **Tool usage**
-* **Multi-step reasoning**
-* **Feedback loop**
+- **Autonomy** (decides next step)
+- **Tool usage**
+- **Multi-step reasoning**
+- **Feedback loop**
 
 ### NOT agentic:
 
-* Single prompt → response
-* Hardcoded pipeline
+- Single prompt → response
+- Hardcoded pipeline
 
 ---
 
@@ -55,9 +55,9 @@ Observe → Think → Act → Observe → ... → Done
 
 🚫 Overkill when:
 
-* Simple CRUD workflows
-* Deterministic pipelines
-* Strict latency requirements
+- Simple CRUD workflows
+- Deterministic pipelines
+- Strict latency requirements
 
 👉 Rule:
 
@@ -83,11 +83,11 @@ Loop Controller
 
 ### Components:
 
-* LLM (reasoning)
-* Tools (actions)
-* Memory
-* Orchestrator
-* Safety layer
+- LLM (reasoning)
+- Tools (actions)
+- Memory
+- Orchestrator
+- Safety layer
 
 ---
 
@@ -95,16 +95,16 @@ Loop Controller
 
 ### LLM:
 
-* Reasoning
-* Tool selection
-* Planning
+- Reasoning
+- Tool selection
+- Planning
 
 ### Orchestrator (your backend):
 
-* Execution
-* Retries
-* Logging
-* Safety checks
+- Execution
+- Retries
+- Logging
+- Safety checks
 
 👉 Golden rule:
 
@@ -133,10 +133,10 @@ Tools (APIs, DBs, Services)
 
 ### Add controls:
 
-* Max iterations
-* Timeout
-* Tool call limits
-* Cost limits
+- Max iterations
+- Timeout
+- Tool call limits
+- Cost limits
 
 ```id="8s5k8r"
 for i in range(max_steps):
@@ -151,10 +151,10 @@ for i in range(max_steps):
 
 Agent should stop when:
 
-* Goal achieved
-* Confidence threshold met
-* No progress
-* Step limit reached
+- Goal achieved
+- Confidence threshold met
+- No progress
+- Step limit reached
 
 ---
 
@@ -162,10 +162,10 @@ Agent should stop when:
 
 ### Techniques:
 
-* Iteration cap
-* Detect repeated actions
-* State comparison
-* Timeout watchdog
+- Iteration cap
+- Detect repeated actions
+- State comparison
+- Timeout watchdog
 
 ---
 
@@ -173,23 +173,23 @@ Agent should stop when:
 
 ### Chain-of-Thought
 
-* Linear reasoning
+- Linear reasoning
 
 ### Tree-of-Thought
 
-* Explore multiple paths
+- Explore multiple paths
 
 ### Graph planning
 
-* Complex workflows
+- Complex workflows
 
 ---
 
 ### When to use:
 
-* Simple → CoT
-* Complex → ToT
-* Multi-agent → Graph
+- Simple → CoT
+- Complex → ToT
+- Multi-agent → Graph
 
 ---
 
@@ -212,9 +212,9 @@ Goal: "Analyze sales data"
 
 ### Strategies:
 
-* Ask clarifying questions
-* Use retrieval (RAG)
-* Use fallback logic
+- Ask clarifying questions
+- Use retrieval (RAG)
+- Use fallback logic
 
 ---
 
@@ -222,9 +222,9 @@ Goal: "Analyze sales data"
 
 ### Signals:
 
-* Explicit goal match
-* Confidence score
-* No new actions
+- Explicit goal match
+- Confidence score
+- No new actions
 
 ---
 
@@ -232,9 +232,9 @@ Goal: "Analyze sales data"
 
 ### Approaches:
 
-* Prompt-based selection
-* Function calling schema
-* Tool ranking
+- Prompt-based selection
+- Function calling schema
+- Tool ranking
 
 ---
 
@@ -260,10 +260,10 @@ get_weather(city: string, date: string)
 
 ### MUST:
 
-* Sandbox execution
-* Validate inputs
-* Rate limit
-* Audit logs
+- Sandbox execution
+- Validate inputs
+- Rate limit
+- Audit logs
 
 ---
 
@@ -271,9 +271,9 @@ get_weather(city: string, date: string)
 
 ### Strategy:
 
-* Retry with backoff
-* Fallback tool
-* Return structured error
+- Retry with backoff
+- Fallback tool
+- Return structured error
 
 ---
 
@@ -281,8 +281,8 @@ get_weather(city: string, date: string)
 
 Ensure repeated tool calls don’t break system:
 
-* Use request IDs
-* Deduplicate actions
+- Use request IDs
+- Deduplicate actions
 
 ---
 
@@ -306,14 +306,14 @@ Ensure repeated tool calls don’t break system:
 
 ### Problems:
 
-* Infinite loops
-* Excess tool calls
+- Infinite loops
+- Excess tool calls
 
 ### Solutions:
 
-* Budget tracking
-* Token limits
-* Tool quotas
+- Budget tracking
+- Token limits
+- Tool quotas
 
 ---
 
@@ -331,19 +331,19 @@ Ensure repeated tool calls don’t break system:
 
 ### 1. Working memory
 
-* Current context
+- Current context
 
 ### 2. Episodic memory
 
-* Past interactions
+- Past interactions
 
 ### 3. Semantic memory
 
-* Knowledge base
+- Knowledge base
 
 ### 4. Procedural memory
 
-* Learned behaviors
+- Learned behaviors
 
 ---
 
@@ -351,14 +351,14 @@ Ensure repeated tool calls don’t break system:
 
 ### Challenges:
 
-* Noise accumulation
-* Irrelevant data
+- Noise accumulation
+- Irrelevant data
 
 ### Solutions:
 
-* Summarization
-* TTL (expiry)
-* Relevance scoring
+- Summarization
+- TTL (expiry)
+- Relevance scoring
 
 ---
 
@@ -366,9 +366,9 @@ Ensure repeated tool calls don’t break system:
 
 ### When to trigger:
 
-* Low confidence
-* High-risk decisions
-* Financial/legal actions
+- Low confidence
+- High-risk decisions
+- Financial/legal actions
 
 ---
 
@@ -376,11 +376,11 @@ Ensure repeated tool calls don’t break system:
 
 Track:
 
-* Tool usage
-* Success rate
-* Loop count
-* Latency
-* Cost per task
+- Tool usage
+- Success rate
+- Loop count
+- Latency
+- Cost per task
 
 ---
 
@@ -422,16 +422,16 @@ User query
 
 ### Tools:
 
-* GitHub API
-* Static analyzer
-* LLM
+- GitHub API
+- Static analyzer
+- LLM
 
 ### Flow:
 
-* Fetch PR
-* Analyze diff
-* Suggest improvements
-* Validate output
+- Fetch PR
+- Analyze diff
+- Suggest improvements
+- Validate output
 
 ---
 
@@ -439,10 +439,10 @@ User query
 
 ### Pattern:
 
-* Planner agent
-* Research agent
-* Writer agent
-* Reviewer agent
+- Planner agent
+- Research agent
+- Writer agent
+- Reviewer agent
 
 ---
 
@@ -454,8 +454,8 @@ Agent keeps thinking without acting
 
 ### Fix:
 
-* Force action after N steps
-* Penalize long reasoning
+- Force action after N steps
+- Penalize long reasoning
 
 ---
 
@@ -463,9 +463,9 @@ Agent keeps thinking without acting
 
 Hardest issues:
 
-* Wrong decomposition
-* Missing steps
-* Infinite refinement
+- Wrong decomposition
+- Missing steps
+- Infinite refinement
 
 ---
 
@@ -473,9 +473,9 @@ Hardest issues:
 
 ### Logs to inspect:
 
-* Thought traces
-* Tool calls
-* Memory state
+- Thought traces
+- Tool calls
+- Memory state
 
 ---
 
@@ -483,9 +483,9 @@ Hardest issues:
 
 ### Strategy:
 
-* Version prompts
-* Version tools
-* A/B test agents
+- Version prompts
+- Version tools
+- A/B test agents
 
 ---
 
@@ -495,10 +495,10 @@ Hardest issues:
 
 > “It’s like a junior employee who can:
 >
-> * Read instructions
-> * Use tools
-> * Ask questions
-> * Improve over time”
+> - Read instructions
+> - Use tools
+> - Ask questions
+> - Improve over time”
 
 ---
 
@@ -506,10 +506,10 @@ Hardest issues:
 
 ### MUST:
 
-* Audit trails
-* Explainability
-* Human approval
-* Data isolation
+- Audit trails
+- Explainability
+- Human approval
+- Data isolation
 
 ---
 
@@ -517,8 +517,8 @@ Hardest issues:
 
 ### Before LLM:
 
-* Mask sensitive data
-* Use regex + ML detectors
+- Mask sensitive data
+- Use regex + ML detectors
 
 ---
 
@@ -526,10 +526,10 @@ Hardest issues:
 
 ### Metrics:
 
-* Task success rate
-* Tool accuracy
-* Step efficiency
-* Cost per task
+- Task success rate
+- Tool accuracy
+- Step efficiency
+- Cost per task
 
 ---
 
