@@ -24,7 +24,7 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
 
-    "types": ["node"],
+    "types": ["node"]
   },
-  "include": ["src"],
+  "include": ["src"]
 }
